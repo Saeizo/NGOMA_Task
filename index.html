@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon University | Excellence in Education & Innovation</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #2563eb;
+            --accent: #f59e0b;
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Navigation Menu */
+        header {
+            background-color: var(--primary);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .brand {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .brand span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero / Welcome Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            text-align: center;
+            padding: 5rem 1.5rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #1e293b;
+            font-weight: 700;
+            padding: 0.85rem 1.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: transform 0.15s ease, background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #fbbf24;
+            transform: translateY(-2px);
+        }
+
+        /* Main Container & Sections */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+            scroll-margin-top: 5rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        /* About Us Section */
+        .about-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .stat-box {
+            padding: 1.25rem;
+            background: var(--bg);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .stat-box h3 {
+            font-size: 1.8rem;
+            color: var(--primary-light);
+        }
+
+        .stat-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Courses Offered Section */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .course-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.75rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .course-tag {
+            display: inline-block;
+            background: #dbeafe;
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.25rem 0.65rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+        }
+
+        .course-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .course-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .contact-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.75rem;
+            text-align: center;
+        }
+
+        .contact-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card p {
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: #cbd5e1;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <header>
+        <div class="navbar">
+            <div class="brand">
+                Horizon <span>University</span>
+            </div>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="#welcome">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#courses">Courses Offered</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Welcome Message & University Name -->
+    <section id="welcome" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Horizon University</h1>
+            <p>
+                Empowering the next generation of thinkers, innovators, and leaders through world-class research, hands-on technology education, and global collaboration.
+            </p>
+            <a href="#courses" class="btn">Explore Our Courses</a>
+        </div>
+    </section>
+
+    <main>
+        <!-- About Us Section -->
+        <section id="about">
+            <h2 class="section-title">About Us</h2>
+            <p class="section-subtitle">A tradition of academic excellence and modern innovation</p>
+            <div class="about-card">
+                <p>
+                    Founded in 1965, <strong>Horizon University</strong> is a premier institution dedicated to academic excellence, cutting-edge scientific research, and community impact. Our campus brings together students and faculty from over 80 countries to solve real-world challenges.
+                </p>
+                <p style="margin-top: 1rem;">
+                    Whether you are pursuing undergraduate studies, graduate research, or professional certifications in software engineering and cloud automation, Horizon University provides the mentorship, laboratories, and industry partnerships you need to succeed.
+                </p>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <h3>15,000+</h3>
+                        <p>Enrolled Students</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>120+</h3>
+                        <p>Degree Programs</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>96%</h3>
+                        <p>Graduate Employment Rate</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>80+</h3>
+                        <p>Partner Countries</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- List of Courses Offered -->
+        <section id="courses">
+            <h2 class="section-title">Courses Offered</h2>
+            <p class="section-subtitle">Industry-aligned undergraduate and postgraduate programs</p>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <span class="course-tag">B.Sc. (Hons) • 4 Years</span>
+                    <h3>Computer Science & DevOps Engineering</h3>
+                    <p>Master software architecture, CI/CD pipelines with Jenkins, containerization with Docker, and cloud computing.</p>
+                </div>
+                <div class="course-card">
+                    <span class="course-tag">B.Sc. (Hons) • 4 Years</span>
+                    <h3>Artificial Intelligence & Data Science</h3>
+                    <p>Explore machine learning, neural networks, big data analytics, and responsible AI deployment.</p>
+                </div>
+                <div class="course-card">
+                    <span class="course-tag">B.Eng. • 4 Years</span>
+                    <h3>Cybersecurity & Network Systems</h3>
+                    <p>Learn ethical hacking, cryptographic protocols, cloud security, and resilient network infrastructure design.</p>
+                </div>
+                <div class="course-card">
+                    <span class="course-tag">B.B.A. • 3 Years</span>
+                    <h3>Business Administration & FinTech</h3>
+                    <p>Combine strategic management, entrepreneurship, and financial technology for modern global markets.</p>
+                </div>
+                <div class="course-card">
+                    <span class="course-tag">M.Sc. • 2 Years</span>
+                    <h3>Cloud Computing & Distributed Systems</h3>
+                    <p>Advanced study in microservices, Kubernetes orchestration, high-availability systems, and site reliability.</p>
+                </div>
+                <div class="course-card">
+                    <span class="course-tag">B.A. (Hons) • 3 Years</span>
+                    <h3>Digital Media & UX Design</h3>
+                    <p>Design human-centered web experiences, interactive media, and accessible digital products.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section id="contact">
+            <h2 class="section-title">Contact Information</h2>
+            <p class="section-subtitle">Get in touch with our admissions and student support teams</p>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Campus Address</h3>
+                    <p>100 University Avenue, Innovation District<br>Tech City, TC 40210</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Phone & Admissions</h3>
+                    <p>Main Office: +1 (555) 234-5678<br>Admissions: +1 (555) 234-5680</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Email & Web</h3>
+                    <p>admissions@horizon.edu<br>support@horizon.edu</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Horizon University. Deployed via Jenkins CI/CD Pipeline &amp; Docker (Nginx).</p>
+    </footer>
+
+</body>
+</html>
